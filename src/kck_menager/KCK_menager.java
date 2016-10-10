@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package kck_menager;
-
+//heheszki z gita
 import java.nio.charset.Charset;
 
 import com.googlecode.lanterna.TerminalFacade;
