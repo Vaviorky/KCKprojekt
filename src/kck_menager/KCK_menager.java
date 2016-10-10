@@ -32,6 +32,7 @@ public class KCK_menager {
         terminal.moveCursor(10, 10);
         terminal.putCharacter('W');
         terminal.putCharacter('i');
+        terminal.putCharacter('F');
         terminal.putCharacter('t');
         terminal.putCharacter('a');
         terminal.putCharacter('m');
