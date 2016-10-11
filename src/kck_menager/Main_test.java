@@ -23,7 +23,7 @@ import com.googlecode.lanterna.screen.ScreenCharacterStyle;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.TerminalSize;
 
-public class KCK_menager {
+public class Main_test {
 
     public static void test1() {
 //final GUIScreen guiScreen = TerminalFacade.createGUIScreen();
@@ -122,7 +122,7 @@ public class KCK_menager {
                 Button exitBtn = new Button("Exit", new Action() {
 
                     public void doAction() {
-// TODO Auto-generated method stub
+                    // TODO Auto-generated method stub
                         newWindow.close();
                         window.close();
                     }
