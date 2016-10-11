@@ -12,7 +12,8 @@ package TextInterface;
 public class Main_text {
 
     public static void main(String[] args) {
-        //lolosdsAAAAAAAAAAAAAAA
-        //asdaasdadasdasda
+        //wywolanie
+        TextWindow textWindow = new TextWindow();
+        textWindow.mainWindow();
     }
 }

@@ -61,7 +61,6 @@ public class Moje_testy {
             }
             System.out.println("Wcisniety klawisz: " + key.getKind().toString());
         }
-
     }
 
     public static void main(String[] args) throws InterruptedException {
