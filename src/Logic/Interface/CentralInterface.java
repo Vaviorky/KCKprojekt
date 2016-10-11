@@ -15,9 +15,9 @@ public interface CentralInterface {
 
     public String GetCurrentPath();
 
-    public String SetCurrentPath();
+    public void SetCurrentPath(String path);
 
-    public List<String> GetFolderContent();
+    public List<String[]> GetFolderContent();
 
     public void Delete();
 
