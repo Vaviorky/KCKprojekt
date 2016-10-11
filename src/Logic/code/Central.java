@@ -100,7 +100,7 @@ public class Central implements CentralInterface {
         if (Cur.isDirectory() == true) {
             return true;
         }
-        return false
+        return false;
     }
 }
 
