@@ -26,9 +26,9 @@ public class TextWindow {
     Central c = new Central();
     Panel panelLeft, panelRight;
 
-public void pushButton(String sth, String ads) {
+    public void pushButton(String sth, String ads) {
 
-}
+    }
 
     public void mainWindow() {
         window.setWindowSizeOverride(new TerminalSize(500, 200));
@@ -43,31 +43,33 @@ public void pushButton(String sth, String ads) {
         panelRight.setLayoutManager(new HorisontalLayout());
         panelRight.setPreferredSize(new TerminalSize(100, 100));
 
-        Table table = new Table(60);
+        Table table = new Table(2);
         table.setColumnPaddingSize(18);
-
         Component[] row = new Component[2];
         row[0] = new Label("Nazwa");
         row[1] = new Label("Typ");
         table.addRow(row);
 //        row = new Component[1];
 //        row[0] = new Button("...");
-        table.addRow(row);
         List<String[]> list = c.GetFolderContent();
-        ActionListBox filelist = new ActionListBox();
+        
         for (String[] x : list) {
             row = new Component[2];
-//            row[0] = filelist
-           filelist.addAction(x[0],new Action() {
-               @Override
-               public void doAction() {
-                   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-               }
-           });
+            ActionListBox filelist = new ActionListBox();
+            filelist.addAction(x[0], new Action() {
+                @Override
+                public void doAction() {
+                    throw new UnsupportedOperationException("CHUJA DZIALA xD");
+                }
+            });
+            
+            row[0] = filelist;
+            row[1] = new Label(x[1]);
+            table.addRow(row);
         }
+        
 
         panelLeft.addComponent(table, LinearLayout.GROWS_HORIZONTALLY);
-        panelLeft.addComponent(filelist);
         panelHolder.addComponent(panelLeft);
         panelHolder.addComponent(panelRight);
         Panel menu = new Panel("MENU");
