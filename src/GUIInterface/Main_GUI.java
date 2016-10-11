@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kck_menager;
+package GUIInterface;
 
 /**
  *
  * @author Vaviorky
  */
-// main Class
-public class Main {
+public class Main_GUI {
     public static void main(String[] args) {
-        Main_test.test3();
-        System.out.println("Nie wiem co ja tutaj robie");
+        //implementacja interfejsu graficznego
     }
+    
 }

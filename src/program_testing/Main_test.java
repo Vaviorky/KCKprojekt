@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kck_menager;
+package program_testing;
 //heheszki z gita
 import java.nio.charset.Charset;
 
