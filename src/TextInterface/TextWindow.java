@@ -95,32 +95,6 @@ public class TextWindow {
         panelRight.setPreferredSize(new TerminalSize(100, 100));
 
         Table table = updateTable();
-        /*table.setColumnPaddingSize(18);
-        Component[] row = new Component[2];
-        row[0] = new Label("Nazwa");
-        row[1] = new Label("Typ");
-        table.addRow(row);
-//        row = new Component[1];
-//        row[0] = new Button("...");
-        List<String[]> list = c.GetFolderContent();
-        
-        for (String[] x : list) {
-            row = new Component[2];
-            ActionListBox filelist = new ActionListBox();
-            filelist.addAction(x[0], new Action() {
-                @Override
-                public void doAction() {
-                    c.SetCurrentPath(c.GetCurrentPath() + x[0]);
-                    
-                    panelLeft.removeAllComponents();
-                    panelLeft.addComponent(table, LinearLayout.GROWS_HORIZONTALLY);
-                }
-            });
-            
-            row[0] = filelist;
-            row[1] = new Label(x[1]);
-            table.addRow(row);
-        }*/
 
         panelLeft.addComponent(table, LinearLayout.GROWS_HORIZONTALLY);
         panelHolder.addComponent(panelLeft);

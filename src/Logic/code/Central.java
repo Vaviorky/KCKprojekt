@@ -42,6 +42,9 @@ public class Central implements CentralInterface {
                 Current = Cur.getPath();
             }
         }
+        else { 
+            path = null;
+        }
     }
 
     @Override
@@ -112,17 +115,15 @@ public class Central implements CentralInterface {
         int endIndex = Current.lastIndexOf("\\");
         String newstr = null;
         if (endIndex != -1) {
-            newstr = Current.substring(0, endIndex); // not forgot to put check if(endIndex != -1)
-        } else {
-            newstr = "";
+            newstr = Current.substring(0, endIndex + 1);
+System.out.println("ssssssssssaaaaaaawwwwwwweeeee"+ Current.charAt(Current.length()-2));
+        } if (Current.charAt(Current.length() - +2) == ':') {
+            System.out.println("sqqqqqqqqqqqqqqqqqqqqqqq---------------------");
             Current = null;
-        }
-
-        /*if (newstr.lastIndexOf("\\") == -1) {
             newstr = "";
-            Current=null;
-        }*/
-        System.out.println("++++++++++++++++++++++sssssssssssssssssss" + newstr);
+        }
+        
+        System.out.println("sssssssssssssssssssssssssssssssssddddddddddddddddddddddddddddd" + newstr);
         return newstr;
     }
 
