@@ -25,7 +25,7 @@ public class TextWindow {
     String rightWindowPath = "SD";
     Central c = new Central();
     Panel panelLeft, panelRight;
-
+    Keyboard_listener listener;
     public void pushButton(String sth, String ads) {
 
     }
@@ -129,7 +129,8 @@ public class TextWindow {
         menu.setPreferredSize(new TerminalSize(100, 3));
         window.addComponent(panelHolder);
         window.addComponent(menu);
-
+        listener = new Keyboard_listener();
+        window.addWindowListener(listener);
         guiScreen.getScreen().startScreen();
         guiScreen.showWindow(window);
         guiScreen.getScreen().stopScreen();
