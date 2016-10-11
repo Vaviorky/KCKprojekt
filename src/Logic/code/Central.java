@@ -29,7 +29,7 @@ public class Central implements CentralInterface {
                 return Current;
             }
         }
-        return "error";
+        return "";
     }
 
     @Override
