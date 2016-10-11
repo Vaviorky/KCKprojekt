@@ -30,6 +30,57 @@ public class TextWindow {
 
     }
 
+    public Table updateTable() {
+        Table table = new Table(2);
+        table.setColumnPaddingSize(18);
+        Component[] row = new Component[2];
+        row[0] = new Label("Nazwa");
+        row[1] = new Label("Typ");
+        table.addRow(row);
+
+        row = new Component[2];
+        ActionListBox filelist = new ActionListBox();
+        filelist.addAction("...", new Action() {
+            @Override
+            public void doAction() {
+                c.SetCurrentPath(c.parentDirectory());
+                panelLeft.removeAllComponents();
+                panelLeft.addComponent(updateTable(), LinearLayout.GROWS_HORIZONTALLY);
+                panelLeft.setTitle(c.GetCurrentPath());
+            }
+        });
+
+        row[0] = filelist;
+        row[1] = filelist;
+        table.addRow(row);
+        
+        List<String[]> list = c.GetFolderContent();
+
+        for (String[] x : list) {
+            row = new Component[2];
+            filelist = new ActionListBox();
+            filelist.addAction(x[0], new Action() {
+                @Override
+                public void doAction() {
+                    c.SetCurrentPath(c.GetCurrentPath() + "\\" + x[0]);
+                    System.out.println(c.GetCurrentPath());
+                    System.out.println(x[0]);
+                    panelLeft.removeAllComponents();
+                    System.out.println("ssssssssssssssssssssssssssssssssssss");
+                    panelLeft.addComponent(updateTable(), LinearLayout.GROWS_HORIZONTALLY);
+                    panelLeft.setTitle(c.GetCurrentPath());
+                }
+            });
+
+            row[0] = filelist;
+            row[1] = new Label(x[1]);
+            table.addRow(row);
+        }
+        System.out.println("kiedy return ");
+        return table;
+
+    }
+
     public void mainWindow() {
         window.setWindowSizeOverride(new TerminalSize(500, 200));
         window.setSoloWindow(true);
@@ -43,8 +94,8 @@ public class TextWindow {
         panelRight.setLayoutManager(new HorisontalLayout());
         panelRight.setPreferredSize(new TerminalSize(100, 100));
 
-        Table table = new Table(2);
-        table.setColumnPaddingSize(18);
+        Table table = updateTable();
+        /*table.setColumnPaddingSize(18);
         Component[] row = new Component[2];
         row[0] = new Label("Nazwa");
         row[1] = new Label("Typ");
@@ -59,15 +110,17 @@ public class TextWindow {
             filelist.addAction(x[0], new Action() {
                 @Override
                 public void doAction() {
-                    throw new UnsupportedOperationException("CHUJA DZIALA xD");
+                    c.SetCurrentPath(c.GetCurrentPath() + x[0]);
+                    
+                    panelLeft.removeAllComponents();
+                    panelLeft.addComponent(table, LinearLayout.GROWS_HORIZONTALLY);
                 }
             });
             
             row[0] = filelist;
             row[1] = new Label(x[1]);
             table.addRow(row);
-        }
-        
+        }*/
 
         panelLeft.addComponent(table, LinearLayout.GROWS_HORIZONTALLY);
         panelHolder.addComponent(panelLeft);

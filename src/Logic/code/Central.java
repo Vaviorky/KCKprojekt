@@ -34,9 +34,13 @@ public class Central implements CentralInterface {
 
     @Override
     public void SetCurrentPath(String path) {
-        File Cur = new File(path);
-        if (Cur.isFile() == true || Cur.isDirectory() == true) {
-            Current = Cur.getPath();
+        if (path != null) {
+            File Cur = new File(path);
+            System.out.println("wwwwwwwwwwwwwwwwww" + Cur.getPath() + Cur.isFile() + Cur.isDirectory());
+            if (Cur.isFile() == true || Cur.isDirectory() == true) {
+
+                Current = Cur.getPath();
+            }
         }
     }
 
@@ -61,7 +65,7 @@ public class Central implements CentralInterface {
                 paths = Cur.listFiles();
                 for (File path : paths) {
                     String[] pom = new String[2];
-                    pom[0] = path.toString();
+                    pom[0] = path.getName();
                     pom[1] = fsv.getSystemTypeDescription(path).toString();
                     temp.add(pom);
                 }
@@ -72,7 +76,8 @@ public class Central implements CentralInterface {
 
     @Override
     public void Delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        File Cur = new File(Current);
+        Cur.delete();
     }
 
     @Override
@@ -102,6 +107,23 @@ public class Central implements CentralInterface {
         }
         return false;
     }
-}
+
+    public String parentDirectory() {
+        int endIndex = Current.lastIndexOf("\\");
+        String newstr = null;
+        if (endIndex != -1) {
+            newstr = Current.substring(0, endIndex); // not forgot to put check if(endIndex != -1)
+        } else {
+            newstr = "";
+            Current = null;
+        }
+
+        /*if (newstr.lastIndexOf("\\") == -1) {
+            newstr = "";
+            Current=null;
+        }*/
+        System.out.println("++++++++++++++++++++++sssssssssssssssssss" + newstr);
+        return newstr;
+    }
 
 }
