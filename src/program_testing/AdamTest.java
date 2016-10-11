@@ -28,7 +28,7 @@ public class AdamTest {
             System.out.println(x[0]);
             System.out.println(x[1]);
         }
-        c.SetCurrentPath(paths.get(0)[0]);
+        c.SetCurrentPath("D:\\Test\\test1");
         paths = c.GetFolderContent();
 
         for (String[] x : paths) {

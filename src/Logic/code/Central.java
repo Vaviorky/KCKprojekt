@@ -34,11 +34,9 @@ public class Central implements CentralInterface {
 
     @Override
     public void SetCurrentPath(String path) {
-        System.out.println("sdassd " + path);
         File Cur = new File(path);
         if (Cur.isFile() == true || Cur.isDirectory() == true) {
             Current = Cur.getPath();
-            System.out.println("sadasd--------------------------------------");
         }
     }
 
@@ -96,5 +94,14 @@ public class Central implements CentralInterface {
     public void RunFile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public boolean typeOf() {
+        File Cur = new File(Current);
+        if (Cur.isDirectory() == true) {
+            return true;
+        }
+        return false
+    }
+}
 
 }
