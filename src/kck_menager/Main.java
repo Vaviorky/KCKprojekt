@@ -13,5 +13,6 @@ package kck_menager;
 public class Main {
     public static void main(String[] args) {
         Main_test.test3();
+        System.out.println("Nie wiem co ja tutaj robie");
     }
 }
