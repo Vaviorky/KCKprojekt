@@ -17,23 +17,24 @@ import javax.swing.filechooser.FileSystemView;
  */
 public class Central implements CentralInterface {
 
-    private String Current =null;
+    private String Current = null;
 
     private static File CopyFile;
 
     @Override
     public String GetCurrentPath() {
-        File Cur = new File(Current);
-        if (Cur.isFile() == true || Cur.isDirectory() == true) {
-            return Current;
-        } else {
-            return "error";
+        if (Current != null) {
+            File Cur = new File(Current);
+            if (Cur.isFile() == true || Cur.isDirectory() == true) {
+                return Current;
+            }
         }
+        return "error";
     }
 
     @Override
     public void SetCurrentPath(String path) {
-        System.out.println("sdassd "+ path);
+        System.out.println("sdassd " + path);
         File Cur = new File(path);
         if (Cur.isFile() == true || Cur.isDirectory() == true) {
             Current = Cur.getPath();
